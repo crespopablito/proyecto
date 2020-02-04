@@ -11,10 +11,7 @@ import java.util.TimerTask;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author BUESTAN
- */
+
 public class MenuImprimir extends javax.swing.JFrame {
 
     /**
@@ -26,7 +23,7 @@ public class MenuImprimir extends javax.swing.JFrame {
         TimerTask m = new TimerTask(){
             @Override
         public void run(){
-                ImageIcon cd = new ImageIcon(getClass().getResource("/logotipoCellSolutions/cellsolutions.jpg"));
+                ImageIcon cd = new ImageIcon(getClass().getResource("/logotipoCellSolutions/logo.png"));
                 ImageIcon id = new ImageIcon(cd.getImage().getScaledInstance(lblIncio.getWidth(), lblIncio.getHeight(), Image.SCALE_DEFAULT));
                 lblIncio.setIcon(id);
                 
@@ -55,7 +52,9 @@ public class MenuImprimir extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
+        jButton2.setBackground(new java.awt.Color(0, 0, 153));
         jButton2.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/1.png"))); // NOI18N
         jButton2.setText("REGISTROS COMPRAS");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -64,8 +63,9 @@ public class MenuImprimir extends javax.swing.JFrame {
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(0, 0, 153));
         jButton3.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 0, 51));
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/13.png"))); // NOI18N
         jButton3.setText("REGRESAR");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -74,7 +74,9 @@ public class MenuImprimir extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 153));
         jButton1.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/1.png"))); // NOI18N
         jButton1.setText("REGISTROS VENTAS");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -84,11 +86,12 @@ public class MenuImprimir extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("MENU IMPRESION DE REGISTROS");
 
+        jButton4.setBackground(new java.awt.Color(0, 0, 153));
         jButton4.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 0, 51));
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/4.png"))); // NOI18N
         jButton4.setText("SALIR DEL SISTEMA");
         jButton4.addActionListener(new java.awt.event.ActionListener() {

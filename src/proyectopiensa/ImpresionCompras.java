@@ -30,10 +30,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static proyectopiensa.RegistroCompras.fecha;
 
-/**
- *
- * @author BUESTAN
- */
+
 public class ImpresionCompras extends javax.swing.JFrame implements Printable{
 
      coneccion con = new coneccion();

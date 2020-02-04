@@ -22,10 +22,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static proyectopiensa.RegistroCompras.fecha;
 
-/**
- *
- * @author BUESTAN
- */
+
 public class RegistroProveedor extends javax.swing.JFrame {
 
     coneccion con = new coneccion();
@@ -39,7 +36,7 @@ public class RegistroProveedor extends javax.swing.JFrame {
         TimerTask m = new TimerTask(){
             @Override
         public void run(){
-                ImageIcon cd = new ImageIcon(getClass().getResource("/logotipoCellSolutions/cellsolutions.jpg"));
+                ImageIcon cd = new ImageIcon(getClass().getResource("/logotipoCellSolutions/logo.png"));
                 ImageIcon id = new ImageIcon(cd.getImage().getScaledInstance(imag2.getWidth(), imag2.getHeight(), Image.SCALE_DEFAULT));
                 imag2.setIcon(id);
                 
@@ -128,25 +125,27 @@ public class RegistroProveedor extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("ID_PROVEEDOR");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("DIRECCION");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("NOMBRE DEL PROVEEDOR");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("PRODUCTOS QUE BRINDA");
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 153));
         jButton1.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/6.png"))); // NOI18N
         jButton1.setText("GUARDAR REGISTRO");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -156,10 +155,12 @@ public class RegistroProveedor extends javax.swing.JFrame {
         });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("TELEFONO");
 
+        jButton2.setBackground(new java.awt.Color(0, 0, 153));
         jButton2.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/12.png"))); // NOI18N
         jButton2.setText("ELIMINAR REGISTROS");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -169,10 +170,12 @@ public class RegistroProveedor extends javax.swing.JFrame {
         });
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("E-MAIL");
 
+        jButton3.setBackground(new java.awt.Color(0, 0, 153));
         jButton3.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/15.png"))); // NOI18N
         jButton3.setText("VER REGISTROS");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -194,7 +197,9 @@ public class RegistroProveedor extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(Tabla);
 
+        jButton4.setBackground(new java.awt.Color(0, 0, 153));
         jButton4.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/13.png"))); // NOI18N
         jButton4.setText("REGRESAR");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -203,8 +208,9 @@ public class RegistroProveedor extends javax.swing.JFrame {
             }
         });
 
+        jButton5.setBackground(new java.awt.Color(0, 0, 153));
         jButton5.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(255, 0, 51));
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/4.png"))); // NOI18N
         jButton5.setText("SALIR DEL SISTEMA");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -219,7 +225,9 @@ public class RegistroProveedor extends javax.swing.JFrame {
             }
         });
 
+        jButton6.setBackground(new java.awt.Color(0, 0, 153));
         jButton6.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/15.png"))); // NOI18N
         jButton6.setText("LIMPIAR");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -258,13 +266,16 @@ public class RegistroProveedor extends javax.swing.JFrame {
         });
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 204));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("FECHA");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("REGISTRO DE PROVEEDORES");
 
+        jButton7.setBackground(new java.awt.Color(0, 0, 153));
         jButton7.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/10.png"))); // NOI18N
         jButton7.setText("MODIFICAR");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -273,7 +284,9 @@ public class RegistroProveedor extends javax.swing.JFrame {
             }
         });
 
+        jButton8.setBackground(new java.awt.Color(0, 0, 153));
         jButton8.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
         jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/3.png"))); // NOI18N
         jButton8.setText("BUSCAR");
         jButton8.addActionListener(new java.awt.event.ActionListener() {

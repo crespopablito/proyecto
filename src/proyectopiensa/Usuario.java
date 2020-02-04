@@ -18,7 +18,7 @@ public class Usuario extends javax.swing.JFrame {
         TimerTask m = new TimerTask(){
             @Override
         public void run(){
-                ImageIcon cd = new ImageIcon(getClass().getResource("/logotipoCellSolutions/cellsolutions.jpg"));
+                ImageIcon cd = new ImageIcon(getClass().getResource("/logotipoCellSolutions/logo.png"));
                 ImageIcon id = new ImageIcon(cd.getImage().getScaledInstance(foto.getWidth(), foto.getHeight(), Image.SCALE_DEFAULT));
                 foto.setIcon(id);
                 
@@ -51,11 +51,12 @@ public class Usuario extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 255, 255));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("CONTRASEÑA");
 
+        txtSalir.setBackground(new java.awt.Color(0, 0, 153));
         txtSalir.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        txtSalir.setForeground(new java.awt.Color(255, 0, 51));
+        txtSalir.setForeground(new java.awt.Color(255, 255, 255));
         txtSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/4.png"))); // NOI18N
         txtSalir.setText("SALIR DEL SISTEMA");
         txtSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -70,7 +71,9 @@ public class Usuario extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 153));
         jButton1.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/11.gif"))); // NOI18N
         jButton1.setText("INGRESAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -80,10 +83,12 @@ public class Usuario extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 51));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("CELLSOLUTIONS");
 
+        jButton2.setBackground(new java.awt.Color(0, 0, 153));
         jButton2.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/13.png"))); // NOI18N
         jButton2.setText("REGRESAR");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +104,7 @@ public class Usuario extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("USUARIO");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -199,9 +204,9 @@ public class Usuario extends javax.swing.JFrame {
         a=txtusuario.getText();
         b=txtcontrasena.getText();
 
-        if(a.equalsIgnoreCase("CellSolutions") && (b.equalsIgnoreCase("198814"))){
+        if(a.equalsIgnoreCase("usuario") && (b.equalsIgnoreCase("usuario"))){
             JOptionPane.showMessageDialog(null,"HA INGRESADO AL SISTEMA");
-            JOptionPane.showMessageDialog(null,"BIENVENIDO  Sr.Jorge Gordillo");
+            JOptionPane.showMessageDialog(null,"BIENVENIDO DE CellSolutions");
 
             MenudeOpciones f=new MenudeOpciones();
             f.setVisible (true);

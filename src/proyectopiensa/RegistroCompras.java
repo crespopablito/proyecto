@@ -38,7 +38,7 @@ public class RegistroCompras extends javax.swing.JFrame {
         TimerTask m = new TimerTask(){
             @Override
         public void run(){
-                ImageIcon cd = new ImageIcon(getClass().getResource("/logotipoCellSolutions/cellsolutions.jpg"));
+                ImageIcon cd = new ImageIcon(getClass().getResource("/logotipoCellSolutions/logo.png"));
                 ImageIcon id = new ImageIcon(cd.getImage().getScaledInstance(imag.getWidth(), imag.getHeight(), Image.SCALE_DEFAULT));
                 imag.setIcon(id);
                 
@@ -183,14 +183,14 @@ lbltotal1.setText(String.valueOf(Math.round(total)));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 204));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("CANTIDAD");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 204));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("MODELO DEL PRODUCTO");
 
         txtCantidad.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -212,7 +212,7 @@ lbltotal1.setText(String.valueOf(Math.round(total)));
         });
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 204));
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("PRECIO");
 
         TablaCompras.setModel(new javax.swing.table.DefaultTableModel(
@@ -234,7 +234,9 @@ lbltotal1.setText(String.valueOf(Math.round(total)));
             }
         });
 
+        btnGuardarVenta.setBackground(new java.awt.Color(0, 0, 153));
         btnGuardarVenta.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        btnGuardarVenta.setForeground(new java.awt.Color(255, 255, 255));
         btnGuardarVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/6.png"))); // NOI18N
         btnGuardarVenta.setText("GUARDAR VENTA");
         btnGuardarVenta.addActionListener(new java.awt.event.ActionListener() {
@@ -243,7 +245,9 @@ lbltotal1.setText(String.valueOf(Math.round(total)));
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 153));
         jButton1.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/13.png"))); // NOI18N
         jButton1.setText("REGRESAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -252,7 +256,9 @@ lbltotal1.setText(String.valueOf(Math.round(total)));
             }
         });
 
+        btnVerCompras.setBackground(new java.awt.Color(0, 0, 153));
         btnVerCompras.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        btnVerCompras.setForeground(new java.awt.Color(255, 255, 255));
         btnVerCompras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/15.png"))); // NOI18N
         btnVerCompras.setText("VER COMPRAS");
         btnVerCompras.addActionListener(new java.awt.event.ActionListener() {
@@ -267,7 +273,9 @@ lbltotal1.setText(String.valueOf(Math.round(total)));
             }
         });
 
+        btnLimpiarVentas.setBackground(new java.awt.Color(0, 0, 153));
         btnLimpiarVentas.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        btnLimpiarVentas.setForeground(new java.awt.Color(255, 255, 255));
         btnLimpiarVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/15.png"))); // NOI18N
         btnLimpiarVentas.setText("LIMPIAR");
         btnLimpiarVentas.addActionListener(new java.awt.event.ActionListener() {
@@ -294,7 +302,9 @@ lbltotal1.setText(String.valueOf(Math.round(total)));
             }
         });
 
+        btnBorrarVentas.setBackground(new java.awt.Color(0, 0, 153));
         btnBorrarVentas.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        btnBorrarVentas.setForeground(new java.awt.Color(255, 255, 255));
         btnBorrarVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/12.png"))); // NOI18N
         btnBorrarVentas.setText("ELIMINAR");
         btnBorrarVentas.addActionListener(new java.awt.event.ActionListener() {
@@ -303,8 +313,9 @@ lbltotal1.setText(String.valueOf(Math.round(total)));
             }
         });
 
+        btnSalirDelPrograma.setBackground(new java.awt.Color(0, 0, 153));
         btnSalirDelPrograma.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        btnSalirDelPrograma.setForeground(new java.awt.Color(255, 0, 0));
+        btnSalirDelPrograma.setForeground(new java.awt.Color(255, 255, 255));
         btnSalirDelPrograma.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/4.png"))); // NOI18N
         btnSalirDelPrograma.setText("SALIR DEL SISTEMA");
         btnSalirDelPrograma.addActionListener(new java.awt.event.ActionListener() {
@@ -314,34 +325,36 @@ lbltotal1.setText(String.valueOf(Math.round(total)));
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 204));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("#FACTURA");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("SUBTOTAL");
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(0, 0, 204));
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("PROVEEDOR");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("I.V.A");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 204));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("PRODUCTO");
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("TOTAL");
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 204));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("MARCA DEL PRODUCTO");
 
+        jButton2.setBackground(new java.awt.Color(0, 0, 153));
         jButton2.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/10.png"))); // NOI18N
         jButton2.setText("MODIFICAR");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -350,7 +363,9 @@ lbltotal1.setText(String.valueOf(Math.round(total)));
             }
         });
 
+        txtbuscar_producto.setBackground(new java.awt.Color(0, 0, 153));
         txtbuscar_producto.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
+        txtbuscar_producto.setForeground(new java.awt.Color(255, 255, 255));
         txtbuscar_producto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/3.png"))); // NOI18N
         txtbuscar_producto.setText("BUSCAR");
         txtbuscar_producto.addActionListener(new java.awt.event.ActionListener() {
@@ -360,10 +375,11 @@ lbltotal1.setText(String.valueOf(Math.round(total)));
         });
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(51, 0, 255));
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("FECHA");
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("REGISTRO DE COMPRAS");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

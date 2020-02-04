@@ -5,17 +5,31 @@
  */
 package proyectopiensa;
 
-import java.awt.Image;
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Chunk;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Font;
+import com.itextpdf.text.FontFactory;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import java.awt.HeadlessException;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import com.itextpdf.text.Image;
 
 
-/**
- *
- * @author BUESTAN
- */
+
 public class MenudeOpciones extends javax.swing.JFrame {
 
     /**
@@ -23,16 +37,17 @@ public class MenudeOpciones extends javax.swing.JFrame {
      */
     public MenudeOpciones() {
         initComponents();
-        Timer timer = new  Timer();
-        TimerTask m = new TimerTask(){
-            @Override
-        public void run(){
-                ImageIcon cd = new ImageIcon(getClass().getResource("/logotipoCellSolutions/cellsolutions.jpg"));
-                ImageIcon id = new ImageIcon(cd.getImage().getScaledInstance(menu.getWidth(), menu.getHeight(), Image.SCALE_DEFAULT));
-                menu.setIcon(id);
-                
-            }
-    }; timer.schedule(m, 10);
+//        Timer timer = new  Timer();
+//        TimerTask m = new TimerTask(){
+//            @Override
+ //       public void run(){
+                ImageIcon cd = new ImageIcon(getClass().getResource("/logotipoCellSolutions/logo.png"));
+   //             ImageIcon id = new ImageIcon(cd.getImage().getScaledInstance(menu.getWidth(), menu.getHeight(), Image.SCALE_DEFAULT));
+ //               menu.setIcon(id);
+//                
+//            }
+//    }; timer.schedule(m, 10);
+   
     }
 
     /**
@@ -59,13 +74,16 @@ public class MenudeOpciones extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        btnGenerar = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
+        jButton7.setBackground(new java.awt.Color(0, 0, 153));
         jButton7.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 0, 0));
+        jButton7.setForeground(new java.awt.Color(255, 255, 255));
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/4.png"))); // NOI18N
         jButton7.setText("SALIR DEL SISTEMA");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -74,10 +92,10 @@ public class MenudeOpciones extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setBackground(new java.awt.Color(0, 0, 153));
         jButton2.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/11.gif"))); // NOI18N
-        jButton2.setText("CLIENTES");
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/agregargente.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -85,35 +103,36 @@ public class MenudeOpciones extends javax.swing.JFrame {
         });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(51, 255, 255));
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("REGISTRAR COMPRAS");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 51));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("MENU DE OPCIONES");
 
+        jButton8.setBackground(new java.awt.Color(0, 0, 153));
         jButton8.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(0, 0, 255));
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/1.png"))); // NOI18N
-        jButton8.setText("IMPRIMIR");
+        jButton8.setForeground(new java.awt.Color(255, 255, 255));
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/imprimir.png"))); // NOI18N
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
             }
         });
 
+        jButton3.setBackground(new java.awt.Color(0, 0, 153));
         jButton3.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/7.png"))); // NOI18N
-        jButton3.setText("VENTAS");
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/comprarealizada.png"))); // NOI18N
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
+        jButton6.setBackground(new java.awt.Color(0, 0, 153));
         jButton6.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(255, 0, 0));
+        jButton6.setForeground(new java.awt.Color(255, 255, 255));
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/13.png"))); // NOI18N
         jButton6.setText("REGRESAR");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -123,27 +142,27 @@ public class MenudeOpciones extends javax.swing.JFrame {
         });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(51, 255, 255));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("REGISTRAR PROVEEDORES");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 255, 255));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("REGISTRAR CLIENTES");
 
+        jButton1.setBackground(new java.awt.Color(0, 0, 153));
         jButton1.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/11.gif"))); // NOI18N
-        jButton1.setText("PROVEEDORES");
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/agregargente.png"))); // NOI18N
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
+        jButton4.setBackground(new java.awt.Color(0, 0, 153));
         jButton4.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 0, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/7.png"))); // NOI18N
-        jButton4.setText("COMPRAS");
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logotipoCellSolutions/Cartadd_icon-icons.com_51193.png"))); // NOI18N
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -151,12 +170,26 @@ public class MenudeOpciones extends javax.swing.JFrame {
         });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(51, 255, 255));
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("REGISTRAR VENTAS");
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(51, 255, 255));
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("IMPRIMIR REPORTES");
+
+        btnGenerar.setText("PDF");
+        btnGenerar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGenerarActionPerformed(evt);
+            }
+        });
+
+        jButton5.setText("jButton5");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -177,9 +210,9 @@ public class MenudeOpciones extends javax.swing.JFrame {
                                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(58, 58, 58)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton8)
+                                    .addComponent(jButton4))))
                         .addContainerGap())
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,7 +229,9 @@ public class MenudeOpciones extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jButton7)
-                                    .addComponent(jButton6))
+                                    .addComponent(jButton6)
+                                    .addComponent(btnGenerar)
+                                    .addComponent(jButton5))
                                 .addGap(147, 147, 147))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jButton1)
@@ -232,14 +267,24 @@ public class MenudeOpciones extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(32, 32, 32)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4))
-                .addGap(49, 49, 49)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton4)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addComponent(btnGenerar)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton8)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jButton5)))
                 .addGap(159, 159, 159))
         );
 
@@ -303,6 +348,72 @@ public class MenudeOpciones extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
+    private void btnGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGenerarActionPerformed
+        Document documento=new Document(); //crear un objeto
+      
+        System.out.println("0");
+        try {
+            String ruta=System.getProperty("user.home");
+            PdfWriter.getInstance(documento,new FileOutputStream(ruta+"/Desktop/Reporte_Tabla_Compra.pdf"));
+            Image header=Image.getInstance("src/logotipoCellSolutions/logo.png");
+            header.scaleToFit(200,200);
+            header.setAlignment(Chunk.ALIGN_CENTER);
+            Paragraph parrafo=new Paragraph();
+            parrafo.setAlignment(Paragraph.ALIGN_CENTER);
+            parrafo.add("Soluciones Tecnologicas\n\n");
+            parrafo.setFont(FontFactory.getFont("Tehoma",20,Font.BOLD,BaseColor.BLUE));
+            parrafo.add("Registros de inventario\n\n");
+                       
+            documento.open();
+            documento.add(header);
+            documento.add(parrafo);
+
+            PdfPTable tabla=new PdfPTable(6);
+            tabla.addCell("Categoria");
+            tabla.addCell("Provedor");
+            tabla.addCell("Producto");
+            tabla.addCell("Modelo");
+            tabla.addCell("Cantidad");
+            tabla.addCell("Precio");
+            try {
+                Connection cn=coneccion.conectar();
+                System.out.println("1");
+//              PreparedStatement pst=cn.prepareStatement("Select c.Id_compra, c.proveedor, p.producto, pro.modelo, from compras c, productos p, proveedores pro where c.IdCategoria=p.IdCategoria and p.idProveedor=pro.idProveedor ");
+                PreparedStatement pst=cn.prepareStatement("Select Id_compra, proveedor, producto, Modelo, Cantidad, Precio FROM COMPRAS ");
+                ResultSet rs=pst.executeQuery();
+                System.out.println("2");
+                if(rs.next()){
+                    do{
+                        tabla.addCell(rs.getString(1));
+                        tabla.addCell(rs.getString(2));
+                        tabla.addCell(rs.getString(3));
+                        tabla.addCell(rs.getString(4));
+                        tabla.addCell(rs.getString(5));
+                        tabla.addCell(rs.getString(6));
+                    }while(rs.next()); 
+                    documento.add(tabla);
+                    System.out.println("3");
+                }
+            } catch (DocumentException | SQLException e) {
+                JOptionPane.showMessageDialog(null, "erro "+e);
+            }
+            documento.close();
+            JOptionPane.showMessageDialog(null,"El PDF fue creado correctamente");
+            
+        } catch (DocumentException | HeadlessException | FileNotFoundException e) {
+        }catch(IOException e){
+            JOptionPane.showMessageDialog(null,"ERROR"+e);
+        }
+        
+    
+    }//GEN-LAST:event_btnGenerarActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        graficas abrir=new graficas();
+        abrir.setVisible(true);
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -339,10 +450,12 @@ public class MenudeOpciones extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnGenerar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
