@@ -168,6 +168,8 @@ lbltotal.setText(String.valueOf(Math.round(total)));
         jButton3 = new javax.swing.JButton();
         txtbuscar = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
+        ComboProducto = new javax.swing.JComboBox<>();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -367,6 +369,16 @@ lbltotal.setText(String.valueOf(Math.round(total)));
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("REGISTRO DE VENTAS");
 
+        ComboProducto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        ComboProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboProductoActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Producto");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -423,8 +435,16 @@ lbltotal.setText(String.valueOf(Math.round(total)));
                         .addGap(52, 52, 52)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(jLabel13)
+                                        .addGap(41, 41, 41)
+                                        .addComponent(ComboProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
                                 .addComponent(logotipo, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(29, 29, 29))
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -453,7 +473,9 @@ lbltotal.setText(String.valueOf(Math.round(total)));
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtfecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtfecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ComboProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtId_Producto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -594,6 +616,10 @@ lbltotal.setText(String.valueOf(Math.round(total)));
             Statement st=coneccion.createStatement();
 
             String descargaComboCliente = (String) ComboCliente.getSelectedItem();
+            String descargaComboProducto = (String) ComboProducto.getSelectedItem();
+            
+            ResultSet cp=st.executeQuery("Select *from productos where nombreProducto ='"+ComboProducto.getSelectedItem()+"'");
+            cp.next();
 
             ResultSet rs=st.executeQuery("Select *from Clientes where Nombre ='"+ComboCliente.getSelectedItem()+"'");
             rs.next();
@@ -714,6 +740,10 @@ lbltotal.setText(String.valueOf(Math.round(total)));
      verventas(txtbuscar.getText());
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void ComboProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComboProductoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -751,6 +781,7 @@ lbltotal.setText(String.valueOf(Math.round(total)));
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ComboCliente;
+    private javax.swing.JComboBox<String> ComboProducto;
     private javax.swing.JTable Tabla;
     private javax.swing.JButton btnBorrarVentas;
     private javax.swing.JButton btnGuardarVenta;
@@ -764,6 +795,7 @@ lbltotal.setText(String.valueOf(Math.round(total)));
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
